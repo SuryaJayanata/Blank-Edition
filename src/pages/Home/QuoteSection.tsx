@@ -28,28 +28,28 @@ export const QuoteSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-zinc-100 text-zinc-950 px-0 w-full overflow-hidden">
-      <div className="w-full space-y-8">
+    <section className="py-10 sm:py-16 bg-zinc-100 text-zinc-950 px-0 w-full overflow-hidden">
+      <div className="w-full space-y-6">
         
-        {/* Clean Header (No Badge, No Shadow) */}
+        {/* Clean Header */}
         <div className="text-center px-4">
-          <h2 className="font-display font-black text-4xl sm:text-6xl text-zinc-950 uppercase tracking-tight leading-none">
-            WHAT OUR COMMUNITY SAYS
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-zinc-950 tracking-tight leading-none">
+            What Our Community Says
           </h2>
         </div>
 
         {/* Slow Running Marquee Track 1 (Left Direction) */}
-        <div className="overflow-hidden select-none py-2">
-          <div className="animate-marquee-slow space-x-4 sm:space-x-6">
+        <div className="overflow-hidden select-none py-1.5">
+          <div className="animate-marquee-slow space-x-3 sm:space-x-5">
             {[...testimonialsTrack1, ...testimonialsTrack1].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white px-5 py-3 rounded-full border border-zinc-300 flex items-center space-x-3.5 shrink-0 shadow-sm"
+                className="bg-white px-4 py-2.5 rounded-full border border-zinc-300 flex items-center space-x-3 shrink-0 shadow-sm"
               >
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-9 h-9 rounded-full object-cover border border-zinc-200 shrink-0"
+                  className="w-8 h-8 rounded-full object-cover border border-zinc-200 shrink-0"
                 />
                 <span className="text-xs sm:text-sm font-bold text-zinc-900 tracking-tight">
                   "{item.text}"
@@ -60,17 +60,17 @@ export const QuoteSection: React.FC = () => {
         </div>
 
         {/* Slow Running Marquee Track 2 (Right Direction) */}
-        <div className="overflow-hidden select-none py-2">
-          <div className="animate-marquee-reverse-slow space-x-4 sm:space-x-6">
+        <div className="overflow-hidden select-none py-1.5">
+          <div className="animate-marquee-reverse-slow space-x-3 sm:space-x-5">
             {[...testimonialsTrack2, ...testimonialsTrack2].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white px-5 py-3 rounded-full border border-zinc-300 flex items-center space-x-3.5 shrink-0 shadow-sm"
+                className="bg-white px-4 py-2.5 rounded-full border border-zinc-300 flex items-center space-x-3 shrink-0 shadow-sm"
               >
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-9 h-9 rounded-full object-cover border border-zinc-200 shrink-0"
+                  className="w-8 h-8 rounded-full object-cover border border-zinc-200 shrink-0"
                 />
                 <span className="text-xs sm:text-sm font-bold text-zinc-900 tracking-tight">
                   "{item.text}"

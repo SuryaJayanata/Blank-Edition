@@ -18,12 +18,14 @@ import lookbook5 from '../../assets/lookbook_5.jpg';
 
 interface ShopPageProps {
   onAddToCart: (product: Product) => void;
+  onSelectProduct?: (product: Product) => void;
   selectedProductFromHome?: Product | null;
   clearSelectedProductFromHome?: () => void;
 }
 
 export const ShopPage: React.FC<ShopPageProps> = ({
   onAddToCart,
+  onSelectProduct,
   selectedProductFromHome,
   clearSelectedProductFromHome
 }) => {
@@ -213,30 +215,35 @@ export const ShopPage: React.FC<ShopPageProps> = ({
     return matchesCategory && matchesSize && matchesSearch;
   });
 
+  const handleItemClick = (product: Product) => {
+    if (onSelectProduct) {
+      onSelectProduct(product);
+    } else {
+      setModalProduct(product);
+    }
+  };
+
   return (
-    <div className="bg-zinc-100 text-zinc-950 min-h-screen py-12 px-4 sm:px-8 lg:px-12 w-full">
-      <div className="max-w-[1700px] mx-auto space-y-10">
+    <div className="bg-zinc-100 text-zinc-950 min-h-screen py-8 px-4 sm:px-8 lg:px-12 w-full">
+      <div className="max-w-[1700px] mx-auto space-y-6">
         
-        {/* Header Title Bar */}
-        <div className="border-b border-zinc-950 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        {/* Header Title Bar - Compact with no sub-label */}
+        <div className="border-b border-zinc-950 pb-5 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="text-xs font-mono font-bold text-yellow-600 uppercase tracking-widest block mb-1">
-              BLANK EDITION ARCHIVE & CATALOG
-            </span>
-            <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl text-zinc-950 uppercase tracking-tight">
-              CATALOG SELECTION
+            <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-zinc-950 tracking-tight leading-none">
+              Catalog Selection
             </h1>
           </div>
 
           <div className="text-right hidden md:block">
-            <span className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-widest">
-              SHOWING {filteredProducts.length} CURATED ITEMS
+            <span className="text-xs font-mono font-bold text-zinc-600 tracking-widest">
+              Showing {filteredProducts.length} curated items
             </span>
           </div>
         </div>
 
-        {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-start">
+        {/* Main Grid Layout with Sticky Sidebar */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-start">
           <div className="lg:col-span-3">
             <FilterSidebar
               categories={categories}
@@ -255,7 +262,7 @@ export const ShopPage: React.FC<ShopPageProps> = ({
             <ProductGrid
               products={filteredProducts}
               onAddToCart={onAddToCart}
-              onSelectProduct={(p) => setModalProduct(p)}
+              onSelectProduct={handleItemClick}
             />
           </div>
         </div>

@@ -48,10 +48,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           : 'bg-zinc-100 border-b border-zinc-300/40'
       }`}
     >
-      {/* Top Announcement Bar - Exact same bg-zinc-100 background */}
-      <div className="bg-zinc-100 text-zinc-950 py-1.5 text-center text-[10px] sm:text-xs tracking-wider uppercase font-extrabold px-4 flex items-center justify-center gap-2 border-b border-zinc-300/40">
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse"></span>
-        <span>Free shipping on orders over Rp 350.000 | February 2026 Edition</span>
+      {/* Top Announcement Bar - Disappears smoothly on scroll */}
+      <div 
+        className={`bg-zinc-100 text-zinc-950 transition-all duration-300 overflow-hidden ${
+          scrolled 
+            ? 'max-h-0 py-0 border-none opacity-0' 
+            : 'max-h-12 py-1.5 border-b border-zinc-300/40 opacity-100'
+        }`}
+      >
+        <div className="text-center text-[10px] sm:text-xs tracking-wider font-semibold px-4 flex items-center justify-center gap-2">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse"></span>
+          <span>Free shipping on orders over Rp 350.000 | February 2026 Edition</span>
+        </div>
       </div>
 
       {/* Main Navbar Bar */}
@@ -63,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Logo */}
             <button 
               onClick={() => setCurrentPage('home')}
-              className="font-display text-xl sm:text-2xl font-black tracking-tight text-zinc-950 uppercase flex items-baseline space-x-0.5 focus:outline-none"
+              className="font-display text-xl sm:text-2xl font-black tracking-tight text-zinc-950 flex items-baseline space-x-0.5 focus:outline-none"
             >
               <span>Blank Edition</span>
               <span className="text-[10px] font-mono font-bold text-zinc-500">®</span>
@@ -173,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setCurrentPage(link.value);
                 setMobileMenuOpen(false);
               }}
-              className={`flex items-center justify-between w-full text-left px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider ${
+              className={`flex items-center justify-between w-full text-left px-4 py-3 rounded-xl text-sm font-bold ${
                 currentPage === link.value
                   ? 'bg-black text-white'
                   : 'text-zinc-800 hover:bg-zinc-100'

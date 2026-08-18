@@ -32,14 +32,14 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-zinc-100 text-zinc-950 px-4 sm:px-8 lg:px-12 w-full overflow-hidden">
-      <div className="max-w-[1700px] mx-auto space-y-12">
+    <section className="py-12 sm:py-18 bg-zinc-100 text-zinc-950 px-4 sm:px-8 lg:px-12 w-full overflow-hidden">
+      <div className="max-w-[1700px] mx-auto space-y-8">
         
-        {/* Section Header (No FREQUENTLY ASKED QUESTIONS sublabel) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start border-b border-zinc-300 pb-10">
+        {/* Section Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start border-b border-zinc-300 pb-8">
           <div className="lg:col-span-5 space-y-2">
-            <h2 className="font-display font-black text-4xl sm:text-6xl text-zinc-950 uppercase tracking-tight leading-none">
-              NEED HELP?
+            <h2 className="font-display font-black text-3xl sm:text-5xl text-zinc-950 tracking-tight leading-none">
+              Need Help?
             </h2>
           </div>
 
@@ -52,41 +52,41 @@ export const FaqSection: React.FC = () => {
               href="https://wa.me/6281234567890"
               target="_blank"
               rel="noreferrer"
-              className="bg-black hover:bg-yellow-400 hover:text-black text-white font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-widest inline-flex items-center space-x-2 transition-all shadow-md shrink-0 self-start sm:self-auto"
+              className="bg-black hover:bg-yellow-400 hover:text-black text-white font-extrabold px-5 py-2.5 rounded-sm text-xs inline-flex items-center space-x-2 transition-all shadow-md shrink-0 self-start sm:self-auto"
             >
-              <span>CONTACT SUPPORT</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Contact Support</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
 
-        {/* Accordion List Box */}
-        <div className="max-w-5xl mx-auto space-y-4">
+        {/* Accordion List Box (Micro Rounded) */}
+        <div className="max-w-4xl mx-auto space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="bg-white border border-zinc-950 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                className="bg-white border border-zinc-950 rounded-sm overflow-hidden shadow-sm transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full text-left p-6 sm:p-8 flex items-center justify-between gap-4 focus:outline-none group"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 focus:outline-none group"
                 >
-                  <span className="font-display font-extrabold text-lg sm:text-2xl text-zinc-950 uppercase tracking-tight group-hover:text-yellow-600 transition-colors">
+                  <span className="font-display font-extrabold text-base sm:text-xl text-zinc-950 tracking-tight group-hover:text-yellow-600 transition-colors">
                     {faq.question}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-zinc-100 group-hover:bg-yellow-400 text-zinc-950 flex items-center justify-center shrink-0 transition-colors">
+                  <div className="w-7 h-7 rounded-full bg-zinc-100 group-hover:bg-yellow-400 text-zinc-950 flex items-center justify-center shrink-0 transition-colors">
                     {isOpen ? (
-                      <Minus className="w-4 h-4 stroke-[2.5]" />
+                      <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
                     ) : (
-                      <Plus className="w-4 h-4 stroke-[2.5]" />
+                      <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
                     )}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0 border-t border-zinc-100 text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed">
+                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 border-t border-zinc-100 text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed">
                     <p>{faq.answer}</p>
                   </div>
                 )}

@@ -16,4 +16,4 @@ export interface CartItem {
   quantity: number;
 }
 
-export type PageType = 'home' | 'shop' | 'about' | 'contact';
+export type PageType = 'home' | 'shop' | 'about' | 'contact' | 'product-detail' | 'checkout' | 'cart';

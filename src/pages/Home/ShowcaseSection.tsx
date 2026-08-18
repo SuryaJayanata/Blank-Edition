@@ -145,26 +145,26 @@ export const ShowcaseSection: React.FC<ShowcaseSectionProps> = ({ onShopNow }) =
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-zinc-100 text-zinc-950 px-4 sm:px-8 lg:px-12 w-full overflow-hidden">
-      <div className="w-full max-w-[1700px] mx-auto space-y-6">
+    <section className="py-10 sm:py-16 bg-zinc-100 text-zinc-950 px-4 sm:px-8 lg:px-12 w-full overflow-hidden">
+      <div className="w-full max-w-[1700px] mx-auto space-y-4">
         
-        {/* Header Row: READY-TO-WEAR & Prominent Black Pill Button */}
-        <div className="flex items-center justify-between mb-2">
-          <h2 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight text-zinc-950 uppercase leading-none">
-            READY-TO-WEAR
+        {/* Header Row: Ready-To-Wear & Button */}
+        <div className="flex items-center justify-between mb-1">
+          <h2 className="font-display font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight text-zinc-950 leading-none">
+            Ready-To-Wear
           </h2>
 
           <button
             onClick={onShopNow}
-            className="bg-black hover:bg-yellow-400 hover:text-black text-white font-extrabold px-6 py-2.5 rounded-full text-xs uppercase tracking-widest flex items-center space-x-2 transition-all duration-300 shadow-md group"
+            className="bg-black hover:bg-yellow-400 hover:text-black text-white font-extrabold px-5 py-2 rounded-sm text-xs flex items-center space-x-2 transition-all duration-300 shadow-md group"
           >
-            <span>SEE ALL CATALOG</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <span>See All Catalog</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
-        {/* Outer 2-Row Stacked Grid Box Container */}
-        <div className="border border-zinc-950 bg-white shadow-2xl overflow-hidden">
+        {/* Outer 2-Row Stacked Grid Box Container (Micro Rounded) */}
+        <div className="border border-zinc-950 bg-white shadow-xl overflow-hidden rounded-sm">
           
           {/* ROW 1: 5-Column Grid Box */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border-b border-zinc-950">
@@ -177,17 +177,17 @@ export const ShowcaseSection: React.FC<ShowcaseSectionProps> = ({ onShopNow }) =
                 } bg-zinc-100 hover:bg-white transition-colors duration-300`}
               >
                 {/* Full-Body Fashion Model Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-100 flex items-center justify-center p-3">
+                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-100 flex items-center justify-center p-2">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out rounded-sm"
                   />
                 </div>
 
                 {/* Bottom Info Bar: Name on Left, Price on Right */}
-                <div className="border-t border-zinc-950 p-4 bg-white group-hover:bg-yellow-400 transition-colors duration-300 flex items-center justify-between text-xs sm:text-sm font-bold tracking-tight text-zinc-950">
-                  <span className="truncate pr-2 font-display uppercase">
+                <div className="border-t border-zinc-950 p-3 bg-white group-hover:bg-yellow-400 transition-colors duration-300 flex items-center justify-between text-xs font-bold tracking-tight text-zinc-950">
+                  <span className="truncate pr-2 font-display">
                     {item.label}
                   </span>
                   <span className="shrink-0 font-mono font-extrabold">
@@ -209,17 +209,17 @@ export const ShowcaseSection: React.FC<ShowcaseSectionProps> = ({ onShopNow }) =
                 } bg-zinc-100 hover:bg-white transition-colors duration-300`}
               >
                 {/* Full-Body Fashion Model Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-100 flex items-center justify-center p-3">
+                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-100 flex items-center justify-center p-2">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out rounded-sm"
                   />
                 </div>
 
                 {/* Bottom Info Bar: Name on Left, Price on Right */}
-                <div className="border-t border-zinc-950 p-4 bg-white group-hover:bg-yellow-400 transition-colors duration-300 flex items-center justify-between text-xs sm:text-sm font-bold tracking-tight text-zinc-950">
-                  <span className="truncate pr-2 font-display uppercase">
+                <div className="border-t border-zinc-950 p-3 bg-white group-hover:bg-yellow-400 transition-colors duration-300 flex items-center justify-between text-xs font-bold tracking-tight text-zinc-950">
+                  <span className="truncate pr-2 font-display">
                     {item.label}
                   </span>
                   <span className="shrink-0 font-mono font-extrabold">
